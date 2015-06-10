@@ -245,8 +245,12 @@ func (k *KV) Get(key string, q *QueryOptions) (*KVPair, *QueryMeta, error)
 Here is a simple example:
 
 {% highlight go %}
-v, _, _ := kv.Get("sites/1/domain", nil)
-fmt.Println(string(v.Value))
+kvp, qm, error := kv.Get("sites/1/domain", nil)
+if err != nil {
+    fmt.Println(err)
+} else {
+    fmt.Println(string(kvp.Value))
+}
 {% endhighlight %}
 
 ### Delete
@@ -255,6 +259,15 @@ This is the signature of the method:
 
 {% highlight go %}
 func (k *KV) Delete(key string, w *WriteOptions) (*WriteMeta, error)
+{% endhighlight %}
+
+Here is a simple example:
+
+{% highlight go %}
+wm, err := kv.Delete("sites/1/domain", nil)
+if err != nil {
+    fmt.Println(err)
+}
 {% endhighlight %}
 
 ### Keys
@@ -279,6 +292,15 @@ This is the signature of the method:
 
 {% highlight go %}
 func (k *KV) DeleteTree(prefix string, w *WriteOptions) (*WriteMeta, error)
+{% endhighlight %}
+
+Here is a simple example:
+
+{% highlight go %}
+wm, err := kv.DeleteTree("sites", nil)
+if err != nil {
+    fmt.Println(err)
+}
 {% endhighlight %}
 
 ### Primitives for advanced operations
