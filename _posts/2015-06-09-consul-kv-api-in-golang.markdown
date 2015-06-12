@@ -74,7 +74,7 @@ These are the available *Config* object attributes.
 *Scheme* attribute should be a string value pointing to the URI scheme
  of the Consul server.  The value could be either `http` or `https`.
  The defaul value is set to `http`.  There are two related environment
- variables to use the `https` schame, `CONSUL_HTTP_SSL` and
+ variables to use the `https` scheme, `CONSUL_HTTP_SSL` and
  `CONSUL_HTTP_SSL_VERIFY` - both are [booean
  values](http://golang.org/pkg/strconv/#ParseBool).  If
  `CONSUL_HTTP_SSL` is set to `true`, the scheme will be changed to
