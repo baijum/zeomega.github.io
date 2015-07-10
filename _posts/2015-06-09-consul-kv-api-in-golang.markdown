@@ -55,7 +55,7 @@ consul, err := consulapi.NewClient(config)
 In the example given above, *Address* attribute is changed to a local
 IP and port.  We can also change some of the attributes by setting
 environment variables.  However, the value that you are setting though
-code will take pririty over the value set through environment
+code will take priority over the value set through environment
 variable.
 
 These are the available *Config* object attributes.
@@ -74,7 +74,7 @@ These are the available *Config* object attributes.
 *Scheme* attribute should be a string value pointing to the URI scheme
  of the Consul server.  The value could be either `http` or `https`.
  The defaul value is set to `http`.  There are two related environment
- variables to use the `https` schame, `CONSUL_HTTP_SSL` and
+ variables to use the `https` scheme, `CONSUL_HTTP_SSL` and
  `CONSUL_HTTP_SSL_VERIFY` - both are [booean
  values](http://golang.org/pkg/strconv/#ParseBool).  If
  `CONSUL_HTTP_SSL` is set to `true`, the scheme will be changed to
@@ -102,7 +102,7 @@ config.HttpAuth = &consulapi.HttpBasicAuth{Username: "guest", Password: "secret"
 consul, err := consulapi.NewClient(config)
 {% endhighlight %}
 
-The *HttpAuth* value can be provied through `CONSUL_HTTP_AUTH`
+The *HttpAuth* value can be provided through `CONSUL_HTTP_AUTH`
 environment variable.  The expected format for the environment
 variable is a coolon separated values of username and password.  If
 colon is not given the entire string is considered as username and
@@ -213,7 +213,8 @@ type QueryOptions struct {
     // Defaults to that of the Config, but can be overriden.
     WaitTime time.Duration
 
-    // Token is used to provide a per-request ACL token
+    // Token is used to provided
+    a per-request ACL token
     // which overrides the agent's default token.
     Token string
 }
